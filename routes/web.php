@@ -13,9 +13,31 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+
+
+Route::get('nguyenphuonganh', function () {
+    return 'Nguyễn Phương Anh';
 });
+<<<<<<< .mine
 Route::get('/huakimngan', function () {
     return "HuaKimNgan";
 });
+
+
+
+
+
+
+
+=======
+
+Route::get('/tranthingocan', function () {
+    return 'Trần Thị Ngọc An';
+});
+
+// Route cho thành viên Nguyễn Ngọc Ý Nhi
+Route::get('/nguyenngocynhi', function () {
+    return 'Nguyễn Ngọc Ý Nhi';
+});
+
+>>>>>>> .theirs
