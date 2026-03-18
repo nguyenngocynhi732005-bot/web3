@@ -16,3 +16,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/tranthingocan', function () {
     return 'Trần Thị Ngọc An';
 });
+
+// Route cho thành viên Nguyễn Ngọc Ý Nhi
+Route::get('/nguyenngocynhi', function () {return 'Nguyễn Ngọc Ý Nhi';});
