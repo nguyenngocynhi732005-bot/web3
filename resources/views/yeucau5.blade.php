@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Danh sách phim Canada</title>
 </head>
-<body>
+<body style="font-family: Arial, sans-serif; padding: 20px;">
 
     <h2>Danh sách các bộ phim của Canada</h2>
     
