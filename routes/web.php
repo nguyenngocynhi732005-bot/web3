@@ -18,4 +18,6 @@ Route::get('/tranthingocan', function () {
 });
 
 // Route cho thành viên Nguyễn Ngọc Ý Nhi
-Route::get('/nguyenngocynhi', function () {return 'Nguyễn Ngọc Ý Nhi';});
+Route::get('/nguyenngocynhi', function () {
+    return 'Nguyễn Ngọc Ý Nhi';
+});
