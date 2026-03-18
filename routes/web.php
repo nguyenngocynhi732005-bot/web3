@@ -28,3 +28,7 @@ Route::get('/nguyenngocynhi', function () {
     return 'Nguyễn Ngọc Ý Nhi';
 });
 
+// Route cho thành viên Hồ Ngọc Quỳnh Anh
+Route::get('/hongocquynhanh', function () {
+    return 'Hồ Ngọc Quỳnh Anh';
+});
