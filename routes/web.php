@@ -13,14 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-
-
-Route::get('nguyenphuonganh', function () {
-    return 'Nguyễn Phương Anh';
-});
-
-Route::get('/tranthingocan', function () {
-    return 'Trần Thị Ngọc An';
+Route::get('/', function () {
+    return view('welcome');
 });
 
 // Route cho thành viên Nguyễn Ngọc Ý Nhi
@@ -28,3 +22,22 @@ Route::get('/nguyenngocynhi', function () {
     return 'Nguyễn Ngọc Ý Nhi';
 });
 
+use Illuminate\Support\Facades\DB;
+
+// 7.3: 10 bộ phim doanh thu cao nhất
+Route::get('/movies/top-budget', function () {
+    $movie = DB::table('movie')
+        ->orderBy('budget', 'desc')
+        ->limit(10)
+        ->get();
+    return view('movie.movies_budget', ['movie' => $movie]);
+});
+
+// 7.4: Phim dài hơn 120 phút
+Route::get('/movies/long-runtime', function () {
+    $movie = DB::table('movie')
+        ->where('runtime', '>', 120)
+        ->limit(10)
+        ->get();
+    return view('movie.movies_runtime', ['movie' => $movie]);
+});
