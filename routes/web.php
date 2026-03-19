@@ -13,10 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-
-
-Route::get('nguyenphuonganh', function () {
-    return 'Nguyễn Phương Anh';
+Route::get('/hongocquynhanh', function () {
+    return 'Hồ Ngọc Quỳnh Anh';
 });
 <<<<<<< .mine
 Route::get('/huakimngan', function () {
@@ -31,14 +29,14 @@ Route::get('/huakimngan', function () {
 
 =======
 
-Route::get('/tranthingocan', function () {
-    return 'Trần Thị Ngọc An';
-});
+use App\Http\Controllers\MovieController;
 
-// Route cho thành viên Nguyễn Ngọc Ý Nhi
-Route::get('/nguyenngocynhi', function () {
-    return 'Nguyễn Ngọc Ý Nhi';
-});
+Route::get('/movies/canada', [MovieController::class, 'canada']);
+
+
+
+
+
 
 <<<<<<< HEAD
 // Route cho thành viên Hồ Ngọc Quỳnh Anh
