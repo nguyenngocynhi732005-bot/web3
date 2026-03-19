@@ -75,7 +75,6 @@ Route::get('/movies/long-runtime', function () {
 });
 Route::get('/nguyenngocynhi', function () {return 'Nguyễn Ngọc Ý Nhi';});
 
-use App\Http\Controllers\MovieController;
 
 Route::get('/movies/canada', [MovieController::class, 'canada']);
 
