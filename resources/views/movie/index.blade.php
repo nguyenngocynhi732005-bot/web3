@@ -4,6 +4,8 @@
     <title>Bài tập Quản trị Mã nguồn mở</title>
 </head>
 <body>
+
+
     <h2>7.1 Danh sách thể loại phim</h2>
     <ul>
         @foreach($genres as $row)
@@ -25,5 +27,6 @@
             </li>
         @endforeach
     </ul>
+    
 </body>
 </html>

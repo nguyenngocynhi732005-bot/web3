@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\DB;
 |--------------------------------------------------------------------------
 */
 
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -19,7 +20,8 @@ Route::get('/huakimngan', function () {
     return 'Hứa Kim Ngân';
 
 // Route cho thành viên Nguyễn Ngọc Ý Nhi
-Route::get('/nguyenngocynhi', function () {return 'Nguyễn Ngọc Ý Nhi';});
+Route::get('/nguyenngocynhi', function () 
+{return 'Nguyễn Ngọc Ý Nhi';});
     return 'Nguyễn Ngọc Ý Nhi';
 });
 
@@ -42,9 +44,6 @@ Route::get('/phim-canada', function () {
     return view('yeucau5', ['movies' => $movies]);
 });
 
-Route::get('/nguyenngocynhi', function () {
-    return 'Nguyễn Ngọc Ý Nhi';
-});
 
 
 // 7.1. Danh sách các thể loại phim
@@ -54,7 +53,6 @@ Route::get('/theloai', [MovieController::class, 'getGenres']);
 Route::get('/topphim', [MovieController::class, 'getTopRated']);
 
 Route::get('/baitapNhi', [MovieController::class, 'showData']);
-
 
 // 7.3: 10 bộ phim doanh thu cao nhất
 Route::get('/movies/top-budget', function () {
