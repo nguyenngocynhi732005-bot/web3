@@ -35,6 +35,10 @@ Route::get('/tranthingocan', function () {
     return 'Trần Thị Ngọc An';
 });
 
+Route::get('/nguyenphuonganh', function () {
+    return 'Nguyễn Phương Anh';
+});
+
 
 Route::get('/phim-canada', function () {
     // Truy vấn trực tiếp vào bảng chứa dữ liệu phim
