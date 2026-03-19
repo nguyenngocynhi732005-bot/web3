@@ -14,21 +14,34 @@ use Illuminate\Support\Facades\DB;
 |
 */
 
-
-
-Route::get('nguyenphuonganh', function () {
-    return 'Nguyễn Phương Anh';
+Route::get('/hongocquynhanh', function () {
+    return 'Hồ Ngọc Quỳnh Anh';
+});
+Route::get('/huakimngan', function () {
+    return "HuaKimNgan";
 });
 
-Route::get('/tranthingocan', function () {
-    return 'Trần Thị Ngọc An';
-});
+
+
+
 
 // Route cho thành viên Nguyễn Ngọc Ý Nhi
+
 Route::get('/nguyenngocynhi', function () {return 'Nguyễn Ngọc Ý Nhi';});
+
+use App\Http\Controllers\MovieController;
+
+Route::get('/movies/canada', [MovieController::class, 'canada']);
+
+
+// Route cho thành viên Hồ Ngọc Quỳnh Anh
+Route::get('/hongocquynhanh', function () {
+    return 'Hồ Ngọc Quỳnh Anh';
+});
 use App\Http\Controllers\MovieController;
 
 Route::get('/baitapNhi', [MovieController::class, 'showData']);Route::get('/nguyenngocynhi', function () {
     return 'Nguyễn Ngọc Ý Nhi';
 });
+
 
