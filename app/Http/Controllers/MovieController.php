@@ -61,7 +61,7 @@ class MovieController extends Controller
                     ->where('vote_count', '>', 10000)
                     ->get();
 
-        return view('movie.list_table', [
+        return view('movies.list_table', [
             'movies' => $movies, 
             'title' => 'Phim siêu phẩm (Điểm > 8 & Vote > 10k)'
         ]);
