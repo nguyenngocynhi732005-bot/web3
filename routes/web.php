@@ -18,6 +18,18 @@ use Illuminate\Support\Facades\Route;
 Route::get('nguyenphuonganh', function () {
     return 'Nguyễn Phương Anh';
 });
+<<<<<<< .mine
+Route::get('/huakimngan', function () {
+    return "HuaKimNgan";
+});
+
+
+
+
+
+
+
+=======
 
 Route::get('/tranthingocan', function () {
     return 'Trần Thị Ngọc An';
@@ -28,7 +40,11 @@ Route::get('/nguyenngocynhi', function () {
     return 'Nguyễn Ngọc Ý Nhi';
 });
 
+<<<<<<< HEAD
 // Route cho thành viên Hồ Ngọc Quỳnh Anh
 Route::get('/hongocquynhanh', function () {
     return 'Hồ Ngọc Quỳnh Anh';
 });
+=======
+>>>>>>> .theirs
+>>>>>>> 445a691e7557a023d91bfdb6f67ba556c8c6b166
