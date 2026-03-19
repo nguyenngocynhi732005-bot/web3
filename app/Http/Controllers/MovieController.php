@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+<<<<<<< HEAD
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB; 
 
@@ -11,12 +12,28 @@ class MovieController extends Controller
     public function showData()
     {
         $genres = DB::table('genre')->select('genre_name', 'genre_name_vn')->get();
+=======
+use Illuminate\Support\Facades\DB;
+
+class MovieController extends Controller
+{
+    // 7.6 - Phim thể loại Action
+    public function action()
+    {
+>>>>>>> 6c9194d3c8fecd1bbc0db4e0f113884113603249
         $movies = DB::table('movie')
-            ->select('movie_name', 'release_date', 'vote_average')
-            ->orderBy('vote_average', 'desc')
-            ->limit(10)
+            ->join('movie_genre', 'movie.id', '=', 'movie_genre.id_movie')
+            ->join('genre', 'movie_genre.id_genre', '=', 'genre.id')
+            ->where('genre.genre_name', 'Action')
+            ->select(
+                'movie.movie_name',
+                'movie.release_date',
+                'movie.overview',
+                'movie.image_link'
+            )
             ->get();
 
+<<<<<<< HEAD
         return view('movie.index', compact('genres', 'movies'));
     }
 
@@ -67,3 +84,8 @@ class MovieController extends Controller
         ]);
     }
 } 
+=======
+        return view('movies.action', compact('movies'));
+    }
+}
+>>>>>>> 6c9194d3c8fecd1bbc0db4e0f113884113603249

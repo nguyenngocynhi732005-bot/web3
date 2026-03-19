@@ -2,18 +2,18 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MovieController;
+<<<<<<< HEAD
 use Illuminate\Support\Facades\DB;
+=======
+
+>>>>>>> 6c9194d3c8fecd1bbc0db4e0f113884113603249
 /*
 |--------------------------------------------------------------------------
 | Web Routes
 |--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
 */
 
+<<<<<<< HEAD
 Route::get('/', function () {
     return view('welcome');
 });
@@ -82,3 +82,15 @@ Route::get('/movie/canada', [MovieController::class, 'canada']);
 
 // 7.7. Phim siêu phẩm: Điểm > 8.0 và Vote > 10000 (Dạng bảng)
 Route::get('/phimsieupham', [MovieController::class, 'getHighRatedMovies']);
+=======
+Route::get('/hongocquynhanh', function () {
+    return 'Hồ Ngọc Quỳnh Anh';
+});
+
+Route::get('/huakimngan', function () {
+    return "HuaKimNgan";
+});
+
+// Route 7.6 - phim Action
+Route::get('/movies/action', [MovieController::class, 'action']);
+>>>>>>> 6c9194d3c8fecd1bbc0db4e0f113884113603249
