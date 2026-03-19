@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\MovieController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,7 +20,7 @@ Route::get('/hongocquynhanh', function () {
     return 'Hồ Ngọc Quỳnh Anh';
 });
 Route::get('/huakimngan', function () {
-    return "HuaKimNgan";
+    return 'Hứa Kim Ngân';
 
 // Route cho thành viên Nguyễn Ngọc Ý Nhi
 Route::get('/nguyenngocynhi', function () {return 'Nguyễn Ngọc Ý Nhi';});
@@ -37,6 +38,8 @@ Route::get('/phim-canada', function () {
 });
 use Illuminate\Support\Facades\DB;
 
+Route::get('/tranthingocan', function () {
+    return 'Trần Thị Ngọc An';
 // 7.3: 10 bộ phim doanh thu cao nhất
 Route::get('/movies/top-budget', function () {
     $movie = DB::table('movie')
@@ -45,7 +48,23 @@ Route::get('/movies/top-budget', function () {
         ->get();
     return view('movie.movies_budget', ['movie' => $movie]);
 });
+});
 
+
+Route::get('/nguyenngocynhi', function () {
+    return 'Nguyễn Ngọc Ý Nhi';
+});
+
+
+
+// 7.1. Danh sách các thể loại phim
+Route::get('/theloai', [MovieController::class, 'getGenres']);
+
+// 7.2. 10 bộ phim có điểm bình chọn cao nhất
+Route::get('/topphim', [MovieController::class, 'getTopRated']);
+
+
+// 7.7. Phim siêu phẩm: Điểm > 8.0 và Vote > 10000 (Dạng bảng)
 // 7.4: Phim dài hơn 120 phút
 Route::get('/movies/long-runtime', function () {
     $movie = DB::table('movie')
@@ -71,3 +90,4 @@ Route::get('/baitapNhi', [MovieController::class, 'showData']);Route::get('/nguy
     return 'Nguyễn Ngọc Ý Nhi';
 });
 
+Route::get('/phimsieupham', [MovieController::class, 'getHighRatedMovies']);
