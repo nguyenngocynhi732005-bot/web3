@@ -1,10 +1,26 @@
 <h1>{{ $title }}</h1>
 
 <style>
-    table { width: 100%; border-collapse: collapse; }
-    th, td { border: 1px solid #ddd; padding: 12px; text-align: left; }
-    th { background-color: #f4f4f4; }
-    img { border-radius: 5px; box-shadow: 2px 2px 5px #ccc; }
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    th,
+    td {
+        border: 1px solid #ddd;
+        padding: 12px;
+        text-align: left;
+    }
+
+    th {
+        background-color: #f4f4f4;
+    }
+
+    img {
+        border-radius: 5px;
+        box-shadow: 2px 2px 5px #ccc;
+    }
 </style>
 
 <table>

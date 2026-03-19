@@ -1,20 +1,28 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Movies Canada</title>
-</head>
-<body>
+@extends('layouts.app')
 
-    <h1>Danh sách phim Canada</h1>
+@section('content')
 
-    @foreach($movies as $movie)
-        <p>
-            Tên phim: {{ $movie->movie_name }} <br>
-            Ngày phát hành: {{ $movie->release_date }} <br>
-            Thời lượng: {{ $movie->runtime }} phút
-        </p>
-        <hr>
-    @endforeach
+<h2>Danh sách phim Canada</h2>
 
-</body>
-</html>
+<table class="main-table">
+    <thead>
+        <tr>
+            <th>STT</th>
+            <th>Tên phim</th>
+            <th>Ngày phát hành</th>
+            <th>Thời lượng (phút)</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach($movies as $index => $movie)
+        <tr>
+            <td>{{ $index + 1 }}</td>
+            <td><strong>{{ $movie->movie_name }}</strong></td>
+            <td>{{ $movie->release_date }}</td>
+            <td>{{ $movie->runtime }} phút</td>
+        </tr>
+        @endforeach
+    </tbody>
+</table>
+
+@endsection
