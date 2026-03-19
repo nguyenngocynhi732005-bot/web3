@@ -14,7 +14,7 @@
             Thời lượng: {{ $movie->runtime }} phút
         </p>
         <hr>
-    @endforeachzs
+    @endforeach
 
 </body>
 </html>

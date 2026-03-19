@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MovieController;
+use Illuminate\Support\Facades\DB;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -36,7 +37,7 @@ Route::get('/phim-canada', function () {
 
     return view('yeucau5', ['movies' => $movies]);
 });
-use Illuminate\Support\Facades\DB;
+
 
 Route::get('/tranthingocan', function () {
     return 'Trần Thị Ngọc An';
@@ -76,7 +77,7 @@ Route::get('/movies/long-runtime', function () {
 Route::get('/nguyenngocynhi', function () {return 'Nguyễn Ngọc Ý Nhi';});
 
 
-Route::get('/movies/canada', [MovieController::class, 'canada']);
+Route::get('/movie/canada', [MovieController::class, 'canada']);
 
 
 // Route cho thành viên Hồ Ngọc Quỳnh Anh
