@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+<<<<<<< HEAD
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB; // Cần thiết để dùng Query Builder [cite: 604, 609]
 
@@ -21,5 +22,19 @@ class MovieController extends Controller
 
         // Trả về view movie/index.blade.php và truyền dữ liệu qua [cite: 420, 442]
         return view('movie.index', compact('genres', 'movies'));
+=======
+use Illuminate\Support\Facades\DB;
+
+class MovieController extends Controller
+{
+    public function canada()
+    {
+        $movies = DB::table('movie')
+            ->where('country_name', 'Canada') 
+            ->select('movie_name', 'release_date', 'runtime')
+            ->get();
+
+        return view('movies.canada', compact('movies'));
+>>>>>>> 6d91d52e4af768ae3784e8fc2e3f3d8cb1a1ffff
     }
 }
