@@ -28,50 +28,6 @@ class MovieController extends Controller
         ]);
     }
     
-    // 7.3. 10 bộ phim có ngân sách (budget) cao nhất
-    public function getTopBudget() {
-        $movies = DB::table('movie')->orderBy('budget', 'desc')->limit(10)->get();
-        return view('movies.list_simple', [
-            'movies' => $movies, 
-            'title' => 'Top 10 phim ngân sách cao nhất', 
-            'type' => 'budget'
-        ]);
-    }
-
-    // 7.4. 10 bộ phim có thời lượng > 120 phút
-    public function getLongMovies() {
-        $movies = DB::table('movie')->where('runtime', '>', 120)->limit(10)->get();
-        return view('movies.list_simple', [
-            'movies' => $movies, 
-            'title' => 'Top 10 phim trên 120 phút', 
-            'type' => 'runtime'
-        ]);
-    }
-
-    // 7.5. Các bộ phim của Canada
-    public function getCanadaMovies() {
-        $movies = DB::table('movie')->where('country_name', 'Canada')->get();
-        return view('movies.list_simple', [
-            'movies' => $movies, 
-            'title' => 'Phim từ Canada', 
-            'type' => 'runtime'
-        ]);
-    }
-
-    // 7.6. Các bộ phim thuộc thể loại Action (Dạng bảng)
-    public function getActionMovies() {
-        $movies = DB::table('movie')
-            ->join('movie_genre', 'movie.id', '=', 'movie_genre.id_movie')
-            ->join('genre', 'genre.id', '=', 'movie_genre.id_genre')
-            ->where('genre.genre_name', 'Action')
-            ->select('movie.movie_name', 'movie.release_date', 'movie.overview', 'movie.image_link')
-            ->get();
-
-        return view('movies.list_table', [
-            'movies' => $movies, 
-            'title' => 'Danh sách phim hành động'
-        ]);
-    }
 
     // 7.7. Phim có điểm > 8.0 và lượt bình chọn > 10000 (Dạng bảng)
     public function getHighRatedMovies() {
