@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\DB; 
 
 /*
 |--------------------------------------------------------------------------
@@ -24,7 +25,10 @@ Route::get('/tranthingocan', function () {
 });
 
 // Route cho thành viên Nguyễn Ngọc Ý Nhi
-Route::get('/nguyenngocynhi', function () {
+Route::get('/nguyenngocynhi', function () {return 'Nguyễn Ngọc Ý Nhi';});
+use App\Http\Controllers\MovieController;
+
+Route::get('/baitapNhi', [MovieController::class, 'showData']);Route::get('/nguyenngocynhi', function () {
     return 'Nguyễn Ngọc Ý Nhi';
 });
 
