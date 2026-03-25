@@ -22,4 +22,10 @@ Route::get('/', function () {
 Route::get('/nguyenngocynhi', function () {return 'Nguyễn Ngọc Ý Nhi';});
 use App\Http\Controllers\MovieController;
 
-Route::get('/baitapNhi', [MovieController::class, 'showData']);
+// Route::get('/baitapNhi', [MovieController::class, 'showData']);
+Route::get('/sach','App\Http\Controllers\ViduLayoutController@sach');
+
+Route::get("/thongtinsach","App\Http\Controllers\Book@sach");
+
+Route::get('/sach/theloai/{id}','App\Http\Controllers\ViduLayoutController@theloai');
+Route::get('/sach/chitiet/{id}','App\Http\Controllers\ViduLayoutController@chitiet');
