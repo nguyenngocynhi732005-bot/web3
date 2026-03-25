@@ -34,5 +34,5 @@ class ViduLayoutController extends Controller
     {
         $book = DB::table('sach')->where('id', $id)->first();
         return view("vidusach.chitiet", compact("book"));
-    }
+    
 }

@@ -23,4 +23,4 @@
         </div>
         @endforeach
     </div>
-</x-book-layout>
+</x-book-layout
