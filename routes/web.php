@@ -30,3 +30,4 @@ Route::get('/phim-canada', function () {
 
     return view('yeucau5', ['movies' => $movies]);
 });
+
