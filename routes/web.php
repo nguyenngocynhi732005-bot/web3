@@ -1,10 +1,16 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+ PhuongAnh
+ HEAD
+use Illuminate\Support\Facades\DB;
+
+use Illuminate\Support\Facades\DB; 
+
 use App\Http\Controllers\MovieController;
 use Illuminate\Support\Facades\DB;
 
-
+main
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,6 +21,11 @@ use Illuminate\Support\Facades\DB;
 Route::get('/', function () {
     return view('welcome');
 });
+
+PhuongAnh
+// Route cho thành viên Nguyễn Ngọc Ý Nhi
+Route::get('/nguyenngocynhi', function () {return 'Nguyễn Ngọc Ý Nhi';});
+HEAD
 
 Route::get('/huakimngan', function () {
     return 'Hứa Kim Ngân';
@@ -34,6 +45,7 @@ Route::get('/hongocquynhanh', function () {
 Route::get('/tranthingocan', function () {
     return 'Trần Thị Ngọc An';
 });
+ main
 
 Route::get('/nguyenphuonganh', function () {
     return 'Nguyễn Phương Anh';
@@ -48,6 +60,19 @@ Route::get('/phim-canada', function () {
 
     return view('yeucau5', ['movies' => $movies]);
 });
+
+ PhuongAnh
+
+use App\Http\Controllers\MovieController;
+
+// Route::get('/baitapNhi', [MovieController::class, 'showData']);
+Route::get('/sach','App\Http\Controllers\ViduLayoutController@sach');
+
+Route::get("/thongtinsach","App\Http\Controllers\Book@sach");
+
+Route::get('/sach/theloai/{id}','App\Http\Controllers\ViduLayoutController@theloai');
+Route::get('/sach/chitiet/{id}','App\Http\Controllers\ViduLayoutController@chitiet');
+
 
 
 
@@ -76,3 +101,4 @@ Route::get('/action', [MovieController::class, 'action']);
 // 7.7. Phim siêu phẩm: Điểm > 8.0 và Vote > 10000 (Dạng bảng)
 //có bảng
 Route::get('/phimsieupham', [MovieController::class, 'getHighRatedMovies']);
+ main
