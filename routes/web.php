@@ -85,3 +85,7 @@ Route::get('/sach/chitiet/{id}','App\Http\Controllers\ViduLayoutController@chiti
 
 
 
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
