@@ -1,31 +1,37 @@
+
 <x-book-layout>
-    
-    <x-slot name="title">
-        Chi tiết: {{ $sach->tieu_de }}
-    </x-slot>
 
-<div class="row">
-    <!-- <div class="col-5">
-        <img src="{{ $sach->link_anh_bia }}" width="100%" alt="{{ $sach->tieu_de }}">
-    </div> -->
-    <div class="col-12">
-<h4><p style="text-align: center">{{ $sach->tieu_de }}</p></h4>
-    </div>
-    <div class="col-4">
-        <img src="{{ $sach->link_anh_bia }}" width="100%" alt="{{ $sach->tieu_de }}">
+<x-slot name="title">Chi tiết sách</x-slot>
+
+<div style="display:flex; gap:40px; margin:20px">
+
+    <!-- ẢNH (FIX KHÔNG BỊ MÉO) -->
+    <img src="{{ $book->link_anh_bia }}" 
+         style="width:250px; height:350px; object-fit:cover; border-radius:10px;">
+
+    <!-- THÔNG TIN -->
+    <div>
+
+        <h2>{{ $book->tieu_de }}</h2>
+
+        <p><b>Tác giả:</b> {{ $book->tac_gia }}</p>
+
+        <p><b>Nhà xuất bản:</b> {{ $book->nha_xuat_ban }}</p>
+
+        <p><b>Giá:</b> {{ number_format($book->gia_ban, 0, ",", ".") }}đ</p>
+
+        <p style="margin-top:15px;">
+            {{ $book->mo_ta }}
+        </p>
+
+        <br>
+
+        <a href="/sach" style="text-decoration:none; color:blue;">
+            ← Quay lại
+        </a>
+
     </div>
 
-    <div class="col-7">
-        <p>Nhà cung cấp: <b>Hải Đăng</b></p>
-        <p>Nhà xuất bản: <b>NXB Văn Học</b></p>
-        <p>Tác giả: <b>{{ $sach->tac_gia ?? 'Đang cập nhật' }}</b></p>
-        <p>Hình thức bìa: <b>{{ $sach->hinh_thuc_bia ?? 'Đang cập nhật' }}</b></p>
-        <p>Giá bán: <span class="text-danger"><b>{{ number_format($sach->gia_ban, 0, ",", ".") }}đ</b></span></p>
-                
-    </div>
 </div>
-<h5 style="padding: 0 20px;">Mô tả: </h5>
-    <p 
-     style="text-align: justify; font-family: Arial, sans-serif; padding: 0 20px;">{{ $sach->mo_ta }}</p>
 
 </x-book-layout>

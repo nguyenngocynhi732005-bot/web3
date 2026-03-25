@@ -1,5 +1,5 @@
-<nav class="navbar navbar-light">
-<ul class="navbar-nav">
-{{$item}}
-</ul>
+<nav class="navbar navbar-expand-lg">
+    <ul class="navbar-nav flex-column w-100">
+        {{ $item }}
+    </ul>
 </nav>
