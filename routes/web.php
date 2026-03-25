@@ -101,4 +101,3 @@ Route::get('/action', [MovieController::class, 'action']);
 // 7.7. Phim siêu phẩm: Điểm > 8.0 và Vote > 10000 (Dạng bảng)
 //có bảng
 Route::get('/phimsieupham', [MovieController::class, 'getHighRatedMovies']);
- main
