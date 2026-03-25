@@ -9,7 +9,7 @@
     <div class='list-book'>
         @foreach($data as $row)
         <div class='book'>
-            <a href="{{ url('sach/chi-tiet/' . $row->id) }}">
+            <a href="{{ url('sach/chitiet/' . $row->id) }}">
                 <img src="{{ asset($row->link_anh_bia) }}" width="100%" height="200px">
             </a>
             <div class="mt-2">
