@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>{{ $title }}</title>
+    <title>@yield('title')</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <style>
         /* 1. Đổ màu đỏ cho thanh Menu */
@@ -85,7 +85,7 @@
                 <img src="{{asset('hinh/sidebar_2.jpg')}}" width="100%" class='mt-1'>
             </div>
             <div class='col-9'>
-                {{ $slot }}
+                @yield('content')
             </div>
         </div>
     </main>
