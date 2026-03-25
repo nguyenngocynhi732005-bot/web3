@@ -76,3 +76,8 @@ Route::get('/action', [MovieController::class, 'action']);
 // 7.7. Phim siêu phẩm: Điểm > 8.0 và Vote > 10000 (Dạng bảng)
 //có bảng
 Route::get('/phimsieupham', [MovieController::class, 'getHighRatedMovies']);
+
+use App\Http\Controllers\ViduLayoutController;
+
+Route::get('/trang1', 'App\Http\Controllers\ViduLayoutController@trang1');
+Route::get('/sach', 'App\Http\Controllers\ViduLayoutController@sach');
