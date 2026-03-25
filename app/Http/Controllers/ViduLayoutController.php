@@ -1,22 +1,15 @@
 <?php
 
-<<<<<<< HEAD
-namespace App\Http\Controllers; 
-
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB; 
-use App\Http\Controllers\Controller; 
-=======
 namespace App\Http\Controllers;
 
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
->>>>>>> remotes/origin/QuynhAnh
+use App\Http\Controllers\Controller;
 
 class ViduLayoutController extends Controller
 {
     function sach()
     {
-<<<<<<< HEAD
         // Lấy 8 cuốn sách rẻ nhất
         $data = DB::select("select * from sach order by gia_ban asc limit 0,8");
         
@@ -33,12 +26,6 @@ class ViduLayoutController extends Controller
 
         return view("vidusach.index", compact("data", "theloai"));
     }
-}
-?>
-=======
-        $data = DB::select("select * from sach order by gia_ban asc limit 0,8");
-        return view("vidusach.index", compact("data"));
-    }
 
     public function chitiet($id)
     {
@@ -53,4 +40,5 @@ class ViduLayoutController extends Controller
         return view('vidusach.chitiet', compact('book'));
     }
 }
->>>>>>> remotes/origin/QuynhAnh
+
+?>
